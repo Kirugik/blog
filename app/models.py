@@ -35,7 +35,7 @@ class Comment(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey('post.id', ondelete="CASCADE"), nullable=False)
 
 
-# define Like database model
+# define Like database model 
 class Like (db.Model):
     id = db.Column(db.Integer,primary_key = True)
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
