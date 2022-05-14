@@ -7,20 +7,23 @@
 {% block content %} 
 <form method="POST">
     <h3 align="center">Sign Up</h3>
-    <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="text" id="email" name="email" class="form-control" placeholder="Enter email">
-
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" class="form-control" placeholder="Enter Username">
-
-        <label for="password1">Password</label>
-        <input type="password" id="password1" name="password1" class="form-control" placeholder="Enter Password">
-
-        <label for="password2">Confirm Password</label>
-        <input type="password" id="password2" name="password2" class="form-control" placeholder="Enter Password Again">
-        <br>
-
+    <div class="form-group" style="width: 450px; margin: auto;">
+        <div class="mb-3">
+            <label for="email">Email Address</label>
+            <input type="text" id="email" name="email" class="form-control" placeholder="Enter email">
+        </div>
+        <div class="mb-3">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Enter Username">
+        </div>
+        <div class="mb-3">
+            <label for="password1">Password</label>
+            <input type="password" id="password1" name="password1" class="form-control" placeholder="Enter Password">
+        </div>
+        <div class="mb-3">
+            <label for="password2">Confirm Password</label>
+            <input type="password" id="password2" name="password2" class="form-control" placeholder="Enter Password Again">
+        </div>
         <div align="center">
             <button class="btn btn-primary" type="submit">Sign Up</button>
         </div>
