@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_required, current_user  
 from .models import Post, User, Comment, Like 
 from . import db  
+from .requests import get_quotes 
 
 views = Blueprint("views", __name__) 
 
@@ -10,7 +11,9 @@ views = Blueprint("views", __name__)
 @login_required   
 def home():
     posts = Post.query.all()
-    return render_template('home.html', user=current_user, posts=posts)
+    quote = get_quotes() 
+    
+    return render_template('home.html', user=current_user, posts=posts, quote=quote)
 
 
 
