@@ -26,13 +26,13 @@ I learn alot of things on a daily basis both in tech and in other fields as well
 
 # Screenshot 
 ### home page
-/home/robert/Documents/others/Python/Flask/blog/app/static/photos/home.png
+![](app/static/photos/home.png)
 
 ### Sign-up page
-/home/robert/Documents/others/Python/Flask/blog/app/static/photos/sign-up.png 
+![](app/static/photos/sign-up.png)
 
 ### Login page
-/home/robert/Documents/others/Python/Flask/blog/app/static/photos/login.png 
+![](app/static/photos/login.png)
 
 
 # Behaviour Driven Development (BDD)
