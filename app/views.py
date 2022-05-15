@@ -59,12 +59,13 @@ def delete_post(id):
 @login_required   
 def posts(username):
     user = User.query.filter_by(username=username).first()
+    quote = get_quotes() 
 
     if not user:
         flash("No user with that username.", category='error')
         return redirect(url_for('views.home')) 
     posts = user.posts 
-    return render_template('posts.html', user=current_user, posts=posts, username=username) 
+    return render_template('posts.html', user=current_user, posts=posts, username=username, quote=quote) 
 
 
 
@@ -141,12 +142,13 @@ def like(post_id):
 
 
 
-@views.route('/user/<uname>')
+@views.route('/profile/<uname>')
 @login_required
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
+    text = Post.query.filter_by(author=author).all()
     
     if user is None:
         abort(404)
     
-    return render_template("profile/profile.html", user = user) 
+    return render_template("profile.html", user = user) 
