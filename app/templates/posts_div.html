@@ -17,12 +17,12 @@
 
 
 <div class="container" style="width: 900px; margin: auto;">
-    <h3 align="center">{% block header %} Posts {% endblock %}</h3>   
+    <h3 align="center" style="margin-top: 20px;">{% block header %} Lastest... {% endblock %}</h3>   
     <div id="posts">
         {% for post in posts %} 
         <div class="mb-5" style="background-color:#fbeec1;">
             <div class="d-flex justify-content-between align-items-center">
-                <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
+                <a href="/posts/{{post.user.username}}" style="text-decoration: none; color: #8d8741; font-size: 20px;">{{post.user.username}}</a>
                 <div>
                     {{ post.likes|length }}
                     {% if user.id in post.likes|map(attribute="author")|list %}
@@ -102,7 +102,7 @@
 
     {% block footer %}
     <div align="center">
-        <a href="/create-post"><button type="button" class="btn btn-lg btn-primary mb-5">Create New Post</button></a>
+        <a href="/create-post"><button type="button" class="btn mb-5" style="background-color: #8d8741;">Create New Post</button></a>
         
     </div>
     {% endblock %}

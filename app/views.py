@@ -8,7 +8,7 @@ views = Blueprint("views", __name__)
 
 @views.route("/")
 @views.route("/home")
-@login_required   
+# @login_required   
 def home():
     posts = Post.query.all()
     quote = get_quotes() 
@@ -147,7 +147,7 @@ def like(post_id):
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
     text = Post.query.filter_by(author=author).all()
-    
+
     if user is None:
         abort(404)
     

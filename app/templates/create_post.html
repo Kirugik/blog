@@ -5,7 +5,7 @@
 
 
 {% block content %} 
-    <h3 align="center">Make a Post</h3> 
+    <h4 align="center" style="margin-top: 20px;">Create New Post</h4>  
     <form method="POST" style="width: 600px; margin: auto;">
         <div class="mb-3"> 
             <label for="title">Blog title</label> 
@@ -16,12 +16,12 @@
             <textarea name="text" id="text" class="form-control" placeholder="Enter blog text"></textarea>
         </div>
         <div align="center">
-            <button type="submit" class="btn btn-lg btn-primary">Post</button>
+            <button type="submit" class="btn" style="background-color: #8d8741;">Post</button>
         </div>
     </form>
     <br> 
 
     <div align="center">
-        <a href="/home"><button type="button" class="btn btn-lg btn-secondary">Back</button></a>
+        <a href="/home"><button type="button" class="btn" style="background-color: #daad86;">Back</button></a>
     </div>
 {% endblock %}   
