@@ -7,14 +7,19 @@
 {% block content %} 
     <h3 align="center">Make a Post</h3> 
     <form method="POST" style="width: 600px; margin: auto;">
-        <label for="blog-text">Blog text</label>  
-        <textarea name="text" id="text" class="form-control"></textarea>
-        <br> 
+        <div class="mb-3"> 
+            <label for="title">Blog title</label> 
+            <input type="text" name="title" id="title" class="form-control" placeholder="Enter blog title">  
+        </div>
+        <div class="mb-3">
+            <label for="text">Blog text</label>
+            <textarea name="text" id="text" class="form-control" placeholder="Enter blog text"></textarea>
+        </div>
         <div align="center">
             <button type="submit" class="btn btn-lg btn-primary">Post</button>
         </div>
     </form>
-    <br>
+    <br> 
 
     <div align="center">
         <a href="/home"><button type="button" class="btn btn-lg btn-secondary">Back</button></a>

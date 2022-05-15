@@ -42,7 +42,10 @@
             </div>
             <div class="card-body">
                 <div class="card-text mb-3">
-                    {{post.text}}
+                    <h4 style="color: blue;">{{post.title}}</h4>  
+                    <p>{{post.text}}</p> 
+                    <small class="text-muted">Posted by {{post.user.username}} on {{post.date_created.strftime('%d-%m-%Y')}}</small>
+                    
                 </div>
                 <div class="collapse" id="comments-{{post.id}}">
                     <div class="card">
@@ -53,7 +56,7 @@
                                         <a href="/posts/{{comment.user.username}}">{{comment.user.username}}</a>: {{ comment.text }}
                                     </div>
                                     <div>
-                                        <small class="text-muted">{{ comment.date_created }}</small>
+                                        <small class="text-muted">{{ comment.date_created.strftime('%d-%m-%Y')}}</small>
                                         {% if user.id == comment.author or user.id == post.author %}
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
@@ -82,9 +85,9 @@
                     <input type="text" id="text" name="text" class="form-control" placeholder="Leave a comment"> 
                     <button type="submit" class="btn btn-primary">Comment</button>
                 </form>
-                <div class="card-footer text-muted">
+                <!-- <div class="card-footer text-muted">
                     {{post.date_created}} 
-                </div> 
+                </div>  -->
             </div>
         </div>
         {% endfor %}

@@ -21,13 +21,14 @@ def home():
 @login_required   
 def create_post():
     if request.method == 'POST':
+        title = request.form.get('title') 
         text = request.form.get('text')
-
+        
         if not text:
             flash('Post cannot be empty.', category='error') 
         else:
             # creating a new post and saving it to db 
-            post = Post(text=text, author=current_user.id) 
+            post = Post(title=title, text=text, author=current_user.id) 
             db.session.add(post)
             db.session.commit()
             flash('Post created!', category='success')
