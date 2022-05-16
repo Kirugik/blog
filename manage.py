@@ -16,6 +16,13 @@ manager = Manager(app)
 # Then, use the add_command method to create a new command 'server' which will launch the app server 
 manager.add_command('server',Server) 
 
+@manager.command 
+def test():
+    """Run the unit tests."""
+    import unittest
+    tests = unittest.TestLoader().discover('tests')
+    unittest.TextTestRunner(verbosity=2).run(tests) 
+
 
 @manager.shell 
 def make_shell_context():
