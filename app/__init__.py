@@ -10,7 +10,7 @@ DB_NAME = "database.db"
 
 
 
-def create_app():
+def create_app(config_options):
     app = Flask(__name__)
 
     app.config['SECRET_KEY'] = "sksht52393nsy23"
