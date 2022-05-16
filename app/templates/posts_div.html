@@ -34,12 +34,6 @@
                     <div class="delete">
                         <a href="/delete-post/{{post.id}}" style="color: red;"><i class="fa-solid fa-trash"></i></a></li>
                     </div>
-                    <!-- <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="/delete-post/{{post.id}}" class="dropdown-item">Delete</a></li>
-                        </ul>
-                    </div>  -->
                     {% endif %}
                 </div>
             </div>
@@ -61,13 +55,6 @@
                                     <div>
                                         <small class="text-muted">{{ comment.date_created.strftime('%d-%m-%Y')}}</small>
                                         {% if user.id == comment.author or user.id == post.author %}
-                                        <!-- <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="/delete-comment/{{comment.id}}" class="dropdown-item">Delete</a></li>
-                                            </ul>
-                                        </div> -->
-
                                         <div class="delete">
                                             <a href="/delete-comment/{{comment.id}}" style="color: red;"><i class="fa-solid fa-trash"></i></a></li>
                                         </div>
@@ -91,10 +78,7 @@
                 <form class="input-group mt-3 mb-3", method="POST" action="/create-comment/{{post.id}}" style="width: 350px;">
                     <input type="text" id="text" name="text" class="form-control" placeholder="Leave a comment"> 
                     <button type="submit" class="btn" style="background-color: #daad86;">Comment</button>  
-                </form>
-                <!-- <div class="card-footer text-muted">
-                    {{post.date_created}} 
-                </div>  -->
+                </form> 
             </div>
         </div>
         {% endfor %}
