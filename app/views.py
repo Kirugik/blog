@@ -104,7 +104,7 @@ def delete_comment(comment_id):
     # Check if the comment exists in the db
     comment = Comment.query.filter_by(id=comment_id).first()
     # if there is no comment...
-    if not comment:
+    if not comment: 
         flash('Comment does not exist.', category='error')
     # if there is a comment, check if the current user(the logged in user) is the author of either the post or the comment
     # we only want the comment to be deleted by either the author of the post or author of the comment

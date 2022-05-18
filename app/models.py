@@ -18,16 +18,16 @@ class User(db.Model, UserMixin):
     likes = db.relationship('Like', backref='user', passive_deletes=True)
     
     
-    @property
-    def password(self):
-        raise AttributeError("You cannot read the password attribute")
+    # @property
+    # def password(self):
+    #     raise AttributeError("You cannot read the password attribute")
         
-    @password.setter
-    def password(self, password):
-        self.password = generate_password_hash(password)
+    # @password.setter
+    # def password(self, password):
+    #     self.password = generate_password_hash(password)
     
-    def verify_password(self, password):
-            return check_password_hash(self.password, password) 
+    # def verify_password(self, password):
+    #         return check_password_hash(self.password, password) 
 
 
 
@@ -42,17 +42,17 @@ class Post(db.Model):
     likes = db.relationship('Like', backref='post', passive_deletes=True)
     
     
-    def save_post(self):
-        db.session.add(self)
-        db.session.commit()
+    # def save_post(self):
+    #     db.session.add(self)
+    #     db.session.commit()
 
-    def delete_post(self):
-        db.session.delete(self)
-        db.session.commit()
+    # def delete_post(self):
+    #     db.session.delete(self)
+    #     db.session.commit()
 
-    @classmethod
-    def get_all_posts(cls):
-        return Post.query.order_by(Post.date_created).all()
+    # @classmethod
+    # def get_all_posts(cls):
+    #     return Post.query.order_by(Post.date_created).all()
 
 
 
@@ -65,20 +65,20 @@ class Comment(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey('post.id', ondelete="CASCADE"), nullable=False)
     
     
-    def save_comment(self):
-        db.session.add(self)
-        db.session.commit()
+    # def save_comment(self):
+    #     db.session.add(self)
+    #     db.session.commit()
 
-    @classmethod
-    def delete_comment(cls, id):
-        deleted = Comment.query.filter_by(id = id).first()
-        db.session.delete(deleted) 
-        db.session.commit()
+    # @classmethod
+    # def delete_comment(cls, id):
+    #     deleted = Comment.query.filter_by(id = id).first()
+    #     db.session.delete(deleted) 
+    #     db.session.commit()
 
-    @classmethod
-    def get_comments(cls,id):
-        comments = Comment.query.filter_by(post_id = id).all()
-        return comments 
+    # @classmethod
+    # def get_comments(cls,id):
+    #     comments = Comment.query.filter_by(post_id = id).all()
+    #     return comments 
 
 
 
